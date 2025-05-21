@@ -7,6 +7,7 @@ const inputChilometri = document.getElementById("chilometri")
 const selectSconto = document.getElementById("sconto")
 const buttonCalcola = document.getElementById("calcola")
 const divPrezzoBiglietto = document.getElementById("prezzo-biglietto")
+const divRecap = document.getElementById("recap")
 console.log(inputChilometri, selectSconto, buttonCalcola, divPrezzoBiglietto)
 
 buttonCalcola.addEventListener("click", function () {
@@ -32,4 +33,5 @@ buttonCalcola.addEventListener("click", function () {
     console.log(prezzoBiglietto)
     // 4. Stampo il prezzo del biglietto
     divPrezzoBiglietto.innerHTML = `${prezzoBiglietto.toFixed(2)} €`
+    divRecap.innerHTML = `Chilometri: ${chilometri}, sconto: ${sconto}, prezzo del biglietto: ${prezzoBiglietto.toFixed(2)} €`
 })
