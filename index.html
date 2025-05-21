@@ -14,7 +14,7 @@
         <form>
             <div class="mb-3">
                 <label for="chilometri" class="form-label">Inserisci i chilometri che vuoi percorrere</label>
-                <input type="text" class="form-control" id="chilometri" aria-describedby="emailHelp">
+                <input id="chilometri" type="text" class="form-control" aria-describedby="emailHelp">
             </div>
 
             <select id="sconto" class="form-select" aria-label="Default select example">
@@ -23,6 +23,12 @@
                 <option value="studente">Sconto studente</option>
                 <option value="over">Sconto over 65</option>
             </select>
+
+            <button id="calcola" type="button" class="btn btn-primary mt-3">Calcola prezzo</button>
+
+            <div class="mt-3">Prezzo del biglietto:
+                <div id="prezzo-biglietto">--</div>
+            </div>
         </form>
 
 
