@@ -9,9 +9,27 @@ const buttonCalcola = document.getElementById("calcola")
 const divPrezzoBiglietto = document.getElementById("prezzo-biglietto")
 console.log(inputChilometri, selectSconto, buttonCalcola, divPrezzoBiglietto)
 
-document.addEventListener("click", function () {
-    const chilometri = inputChilometri.value
+buttonCalcola.addEventListener("click", function () {
+    // 1. Leggo i km che inserisce l'utente
+    const chilometri = parseFloat(inputChilometri.value)
+    console.log(chilometri)
+    // 2. Leggo il tipo di sconto che devo applicare
     const sconto = selectSconto.value
+    console.log(sconto)
+
     const prezzoPerKm = 0.21
 
+    let prezzoBiglietto
+
+    // 3. Calcolo il prezzo del biglietto e applico lo sconto se necessario
+    if (sconto === "studente") {
+        prezzoBiglietto = (chilometri * prezzoPerKm) * 0.2
+    } else if (sconto === "over") {
+        prezzoBiglietto = (chilometri * prezzoPerKm) * 0.4
+    } else {
+        prezzoBiglietto = chilometri * prezzoPerKm
+    }
+    console.log(prezzoBiglietto)
+    // 4. Stampo il prezzo del biglietto
+    divPrezzoBiglietto.innerHTML = `${prezzoBiglietto.toFixed(2)} €`
 })
