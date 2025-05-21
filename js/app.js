@@ -25,7 +25,7 @@ buttonCalcola.addEventListener("click", function () {
     // 3. Calcolo il prezzo del biglietto e applico lo sconto se necessario
     if (sconto === "studente") {
         prezzoBiglietto = (chilometri * prezzoPerKm) * 0.2
-    } else if (sconto === "over") {
+    } else if (sconto === "over-65") {
         prezzoBiglietto = (chilometri * prezzoPerKm) * 0.4
     } else {
         prezzoBiglietto = chilometri * prezzoPerKm
